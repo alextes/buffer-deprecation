@@ -12,5 +12,8 @@
   "dependencies": {
     "benchmark": "^2.1.2",
     "safe-buffer": "^5.0.1"
+  },
+  "scripts": {
+    "start": "node --no-warnings index.js"
   }
 }
