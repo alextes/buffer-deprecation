@@ -23,7 +23,7 @@ Supports node versions: > v6
 To understand why this method is the preferred one you can read the node docs linked earlier.
 
 ### Going forward
-Since most modules will want to support node versions older than v6 let's look at a solution. [safe-buffer](https://github.com/feross/safe-buffer). safe-buffer is a simple shim that uses the third version of creating buffers whenever it can and falls back to the first if it can't.
+Since most modules will want to support node versions older than v6 let's look at a solution. [safe-buffer](https://github.com/feross/safe-buffer). safe-buffer is a simple shim that uses the third version of creating buffers whenever it can and falls back to the first if it can't. If you'd like a more concise solution instead take a look at these ponyfills: [buffer-from](https://github.com/LinusU/buffer-from), [buffer-alloc](https://github.com/LinusU/buffer-alloc) and [buffer-alloc-unsafe](https://github.com/LinusU/buffer-alloc-unsafe).
 
 ## Performance
 In most cases you'll simply want to use the safe 'alloc'. For the rare cases where performance matters here are the benchmark results. I should immediately add I have no understanding of node's actual buffer creation, v8's optimizations or the benchmarkjs library for that matter. The below results might be completely wrong.
