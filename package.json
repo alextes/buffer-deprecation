@@ -1,0 +1,12 @@
+{
+  "name": "buffer-deprecation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Explain and explore node's buffer deprecation to help developers make better choices.",
+  "repository": {
+    "url": "https://github.com/AlexTes/buffer-deprecation.git",
+    "type": "git"
+  },
+  "author": "Alexander Tesfamichael"
+}
