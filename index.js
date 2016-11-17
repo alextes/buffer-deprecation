@@ -3,12 +3,20 @@ const BufferShim = require('safe-buffer').Buffer;
 
 const suite = new Benchmark.Suite;
 
-function createBufferOld() {
+function createBufferFirst() {
   Buffer(8);
 }
 
-function createBufferNew() {
+function createBufferSecond() {
   new Buffer(8);
+}
+
+function createBufferThirdSafe() {
+  Buffer.alloc(8);
+}
+
+function createBufferThirdUnsafe() {
+  Buffer.allocUnsafe(8);
 }
 
 function createBufferShimSafe() {
@@ -20,10 +28,12 @@ function createBufferShimUnsafe() {
 }
 
 suite
-  .add('Old Buffer Creation', createBufferOld)
-  .add('New Buffer Creation', createBufferNew)
-  .add('Shimmed Safe Buffer Creation', createBufferShimSafe)
-  .add('Shimmed Unsafe Buffer Creation', createBufferShimUnsafe)
+  .add('First Method: Buffer()', createBufferFirst)
+  .add('Second Method: new Buffer()', createBufferSecond)
+  .add('Third Method: Buffer.alloc()', createBufferThirdSafe)
+  .add('Third Method: Buffer.allocUnsafe()', createBufferThirdUnsafe)
+  .add('Shim Safe', createBufferShimSafe)
+  .add('Shim Unsafe', createBufferShimUnsafe)
   .on('cycle', function(event) {
     console.log(String(event.target));
   })
@@ -31,3 +41,4 @@ suite
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   .run({ 'async': true });
+
