@@ -23,5 +23,8 @@ Since most modules will want to support node versions older than v6 let's look a
 
 ## Performance
 In most cases you'll simply want to use the safe 'alloc'. For the rare cases where performance matters here are the benchmark results. I should immediately add I have no understanding of node's actual buffer creation, v8's optimizations or the benchmarkjs library for that matter. The below results might be completely wrong.
-TODO: add bench results
+Old Buffer Creation x 8,875,596 ops/sec ±0.77% (89 runs sampled)
+New Buffer Creation x 8,134,949 ops/sec ±0.79% (87 runs sampled)
+Shimmed Safe Buffer Creation x 1,526,453 ops/sec ±1.34% (76 runs sampled)
+Shimmed Unsafe Buffer Creation x 9,885,907 ops/sec ±1.01% (86 runs sampled)
 
