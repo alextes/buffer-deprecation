@@ -26,7 +26,7 @@ To understand why this method is the preferred one you can read the node docs li
 So if you're supporting node >=v4 you're good just using the third method. Keeping in mind v0.12 is no longer supported by the end of 2016 this makes sense for most. In case you still want to support older versions of node here are two good options. [safe-buffer](https://github.com/feross/safe-buffer) is a simple shim that uses the third method whenever possible and falls back to the first if it can't. (Since the vocal warnings started with node v7 you won't see any warnings from this). If you'd like a more concise solution instead take a look at these ponyfills: [buffer-from](https://github.com/LinusU/buffer-from), [buffer-alloc](https://github.com/LinusU/buffer-alloc) and [buffer-alloc-unsafe](https://github.com/LinusU/buffer-alloc-unsafe).
 
 ### Performance
-In most cases you'll simply want to use the safe 'alloc'. For the rare cases where performance matters here are the benchmark results. I should immediately add I have no understanding of node's actual buffer creation, v8's optimizations or the benchmarkjs library for that matter. The below results might be completely wrong.
+In most cases you'll simply want to use the safe 'alloc'. For the rare cases where performance matters here are the benchmark results. I should immediately add I have no understanding of node's actual buffer creation, v8 engine's optimizations or the benchmarkjs library for that matter. The below results might be completely wrong.
 Using node v7, with the shim using the third method, the results are:
 ```
 First Method: Buffer() x 9,094,347 ops/sec ±0.89% (88 runs sampled)
