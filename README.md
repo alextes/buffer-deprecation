@@ -2,7 +2,7 @@
 This repository is an attempt to answer some questions regarding node's buffer creation deprecation, what considerations should be made and as a result how to implement it going forward.
 
 ## The issue
-The node team decided to deprecate both the first way of buffer creation `Buffer(size)` and the second `new Buffer(size)`. Now there's a third for node >= v6, namely `Buffer.from` / `Buffer.alloc` / `Buffer.allocUnsafe`. 
+The node team decided to deprecate both the first way of buffer creation `Buffer(size)` and the second `new Buffer(size)`. Now there's a third for node >= v4, namely `Buffer.from` / `Buffer.alloc` / `Buffer.allocUnsafe`. 
 
 A lot node v7 users might have started to notice the following warning: 
 ```
