@@ -5,7 +5,11 @@ This repository is an attempt to answer some questions regarding node's buffer c
 The node team decided to deprecate both the first way of buffer creation `Buffer(size)` and the second `new Buffer(size)`. Now there's a third for node > v6, namely `Buffer.from` / `Buffer.alloc` / `Buffer.allocUnsafe`. 
 
 A lot node v7 users might have started to notice the following warning: 
-`(node:8628) DeprecationWarning: Using Buffer without `new` will soon stop working. Use `new Buffer()`, or preferably `Buffer.from()`, `Buffer.allocUnsafe()` or `Buffer.alloc()` instead.`. I haven't looked up the reason the first method was deprecated. However moving forward one might notice the second, suggested method has also been deprecated for security reasons ([Issue #4660](https://github.com/nodejs/node/issues/4660)). Read more about it in [the node docs](https://nodejs.org/api/buffer.html#buffer_buffer_from_buffer_alloc_and_buffer_allocunsafe). While its clear all modules should eventually move to the third implementation this leaves the questions about what effect your choice might have on supported node versions and in some cases the performance impact of allocating your buffers differently.
+```
+(node:8628) DeprecationWarning: Using Buffer without `new` will soon stop working. 
+Use `new Buffer()`, or preferably `Buffer.from()`, `Buffer.allocUnsafe()` or `Buffer.alloc()` instead.
+```
+I haven't looked up the reason the first method was deprecated. However moving forward one might notice the second, suggested method has also been deprecated for security reasons ([Issue #4660](https://github.com/nodejs/node/issues/4660)). Read more about it in [the node docs](https://nodejs.org/api/buffer.html#buffer_buffer_from_buffer_alloc_and_buffer_allocunsafe). While its clear all modules should eventually move to the third implementation this leaves the questions about what effect your choice might have on supported node versions and in some cases the performance impact of allocating your buffers differently.
 
 ## The Preferred Way Forward
 I have not looked up why the node team thinks its high time you stop using the first but their message is clear so let's look at the second.
