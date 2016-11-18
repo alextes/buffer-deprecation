@@ -37,3 +37,6 @@ Shim Safe x 1,502,023 ops/sec ±2.42% (72 runs sampled)
 Shim Unsafe x 9,829,470 ops/sec ±0.91% (84 runs sampled)
 ```
 
+## See Also
+Original issue on deprecating `Buffer()` and `new Buffer()` [here](https://github.com/nodejs/node/issues/4660)
+Issue on the future of Buffer [here](https://github.com/nodejs/node/issues/9531).
