@@ -27,7 +27,7 @@ So if you're supporting node >=v4 you're good just using the third method. Keepi
 
 ### Performance
 In most cases you'll simply want to use the safe 'alloc'. For the rare cases where performance matters here are the benchmark results. I should immediately add I have no understanding of node's actual buffer creation, v8 engine's optimizations or the benchmarkjs library for that matter. The below results might be completely wrong.
-Using node v7, with the shim using the third method, the results are:
+Using node v7, with the shim using the third method, allocating an 8 byte buffer the results are:
 ```
 First Method: Buffer() x 9,094,347 ops/sec ±0.89% (88 runs sampled)
 Second Method: new Buffer() x 8,182,048 ops/sec ±0.88% (86 runs sampled)
